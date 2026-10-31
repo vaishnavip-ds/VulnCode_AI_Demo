@@ -31,6 +31,8 @@ jobs:
         run: >-
           semgrep scan
           --config p/owasp-top-ten
+          --config .semgrep/vulncode-demo.yml
+          --exclude .github
           --json
           --output semgrep.json
           .

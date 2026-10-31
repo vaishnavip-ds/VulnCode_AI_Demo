@@ -1,0 +1,15 @@
+rules:
+  - id: vulncode.python.sql-injection-fstring
+    message: >-
+      SQL query execution uses an f-string. Pass user-controlled values as
+      bound query parameters instead of interpolating them into SQL.
+    severity: ERROR
+    languages:
+      - python
+    metadata:
+      cwe:
+        - "CWE-89: Improper Neutralization of Special Elements used in an SQL Command"
+      confidence: HIGH
+      category: security
+    patterns:
+      - pattern: $CURSOR.execute(f"...")

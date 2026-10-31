@@ -1,4 +1,3 @@
 def find_user(cursor, username):
-    query = f"SELECT * FROM users WHERE username = '{username}'"
-    cursor.execute(query)
+    cursor.execute(f"SELECT * FROM users WHERE username = '{username}'")
     return cursor.fetchone()
